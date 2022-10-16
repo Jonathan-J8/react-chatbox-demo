@@ -21,7 +21,16 @@ const InputText = ({ onClick }: IInputText) => {
 
   return (
     <div className={css.container}>
-      <textarea rows={2} ref={inputRef} className={css.textarea} placeholder="Your message..."></textarea>
+      <label htmlFor="input-text" className="sr-only">
+        Wright your message
+      </label>
+      <textarea
+        rows={2}
+        name="input-text"
+        ref={inputRef}
+        className={css.textarea}
+        placeholder="Your message..."
+      ></textarea>
       <Fab title="send message" onClick={_onClick}>
         <img src={svg} alt="send message" width="24" height="24" />
       </Fab>

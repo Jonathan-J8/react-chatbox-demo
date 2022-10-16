@@ -12,7 +12,7 @@ import List from './List';
 import Item from './Item';
 import InputText from './InputText';
 
-const Chatbox = ({ limit, userId, userName, clientId, clientName }: ChatboxComponent) => {
+const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponent) => {
   const [state, dispatch] = useReducer(reducer, initState());
 
   const pushUserItem = (text: string) => {
@@ -30,7 +30,7 @@ const Chatbox = ({ limit, userId, userName, clientId, clientName }: ChatboxCompo
   const prependItems = async () => {
     await wait(Math.random() * 1000); // fake fetch delay
     const index = state.startAtIndex;
-    const from = Math.max(0, index - limit);
+    const from = Math.max(0, index - messageLimit);
     const to = Math.max(0, index);
     const items = db.getPreviousItemsFromTo({ clientId, userId, from, to });
     dispatch({ type: Action.PREPEND_ITEMS, payload: { items, startAtIndex: from } });
@@ -38,7 +38,7 @@ const Chatbox = ({ limit, userId, userName, clientId, clientName }: ChatboxCompo
 
   const loadItems = async () => {
     const to = db.getItemsLength({ clientId, userId });
-    const from = Math.max(0, to - limit);
+    const from = Math.max(0, to - messageLimit);
     const items = db.getPreviousItemsFromTo({ clientId, userId, from, to });
     dispatch({ type: Action.PREPEND_ITEMS, payload: { items, startAtIndex: from } });
   };

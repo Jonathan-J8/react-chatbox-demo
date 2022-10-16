@@ -11,9 +11,9 @@ export type ChatboxState = {
 };
 
 export type ChatboxComponent = {
-  limit: number;
+  messageLimit: number;
   userId: string;
-  userName: string;
+  userName?: string;
   clientId: string;
   clientName: string;
 };

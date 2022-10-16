@@ -19,3 +19,7 @@
   min-width: 240px;
   width: 100%;
 }
+
+.loading {
+  color: gray;
+}
