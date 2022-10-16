@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "npm run build && vite preview"
+    "start": "vite preview",
+    "preview": "npm run build && vite preview",
+    "test:e2e": "npx playwright test --project=chromium",
+    "test:e2e:debug": "npx playwright test --headed  --project=chromium",
+    "test:codegen": "npx playwright codegen http://localhost:8080"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -15,6 +19,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.27.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/uuid": "^8.3.4",
