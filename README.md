@@ -2,7 +2,7 @@
 
 - goal : create a chatbox who display client/user messages
 - stack : react+typescript
-- additionnal stack : vite+react-infinite-scroll-component+uuid
+- additionnal stack : vite+react-infinite-scroll-component+uuid+playwright
 
 ![Screenshot](./public/screenshot.png)
 
