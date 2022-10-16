@@ -52,7 +52,7 @@ const Chatbox = ({ limit, userId, userName, clientId, clientName }: ChatboxCompo
     loadItems();
   }, []);
 
-  // useIncomingText(pushIncomItem);
+  useIncomingText(pushIncomItem);
 
   // debug
   useWindowListener(Action.ERASE_ALL_CHATBOX_STORE, removeAllItems);

@@ -20,7 +20,7 @@ class LocalStorage {
 
   constructor(key: string, { immutable = true, type = String }: Option) {
     if (immutable) this._key = `${key}`;
-    else this._key = `${__STORAGE_VERSION__}${key}`;
+    else this._key = `0.0.1-${key}`;
     this._dataType = new type();
   }
 
@@ -44,7 +44,7 @@ class LocalStorage {
   }
   set data(data: any) {
     const newDataType = typeOf(data);
-    if (newDataType !== this.dataTypeToString) throw new Error(`LocalStorage : data must be typeof ${this.dataType}`);
+    if (newDataType !== this.dataTypeToString) throw new Error(`LocalStorage : data must be typeof ${this._dataType}`);
 
     if (newDataType === 'array') {
       localStorage.setItem(this._key, JSON.stringify([...this.data, ...data]));
