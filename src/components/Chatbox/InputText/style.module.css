@@ -16,6 +16,7 @@
   border: none;
   overflow-x: hidden;
   flex-grow: 1;
+  white-space: pre-wrap;
 }
 
 .textarea:active {

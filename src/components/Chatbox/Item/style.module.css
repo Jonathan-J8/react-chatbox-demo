@@ -22,6 +22,8 @@
   line-height: 1.8rem;
 }
 .text {
+  width: inherit;
   white-space: pre-wrap;
   border-radius: 0.5rem;
+  text-overflow: ellipsis;
 }

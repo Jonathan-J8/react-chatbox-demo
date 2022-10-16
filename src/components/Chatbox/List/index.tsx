@@ -18,7 +18,8 @@ const List = ({ dataLength, hasMore, scrollableId, onScroll, children }: ListPro
         next={onScroll}
         hasMore={hasMore}
         inverse={true}
-        style={{ display: 'flex', flexDirection: 'column-reverse', width: '100%' }} //To put endMessage and loader to the top.
+        className={css.list}
+        // style={{ display: 'flex', flexDirection: 'column-reverse', width: '100%' }} //To put endMessage and loader to the top.
         loader={<h4>Loading...</h4>}
       >
         {children}
