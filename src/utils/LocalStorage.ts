@@ -20,7 +20,7 @@ class LocalStorage {
 
   constructor(key: string, { immutable = true, type = String }: Option) {
     if (immutable) this._key = `${key}`;
-    else this._key = `0.0.1-${key}`;
+    else this._key = `${__STORAGE_VERSION__}-${key}`;
     this._dataType = new type();
   }
 
