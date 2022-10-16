@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import * as db from '@/utils/fakeApi';
+import * as db from '@/api/chatboxs';
 import wait from '@/utils/wait';
 import useIncomingText from '@/hooks/useIncomingText';
 import useWindowListener from '@/hooks/useWindowListener';

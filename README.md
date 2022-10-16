@@ -51,15 +51,17 @@ npm run dev
 
 ## Todo
 
-- [x] basic css
-- [x] isolate chatbox by user and client ids
-- [x] faking client incom message with https://jsonplaceholder.typicode.com/
-- [x] faking database api with localStorage
-- [x] lazy load previous messages
-- [x] load range of messages on init
-- [x] load range of messages on scroll to top
-- [x] e2e tests
-- [ ] button scroll down on new message
-- [ ] scroll down on chatbox focus
-- [ ] redux store for messages notifications
-- [ ] add https://ant.design/ library
+- [x] logic: isolate chatbox by user and client ids
+- [x] logic: faking client incom message with https://jsonplaceholder.typicode.com/
+- [x] logic: faking database api with localStorage
+- [x] logic: lazy load previous messages
+- [x] logic: load range of messages on init
+- [x] logic: load range of messages on scroll to top
+- [ ] logic: redux store for messages notifications
+- [x] test: e2e
+- [x] ux: basic css
+- [x] ux: basic ui
+- [ ] ux: suspense fallbacks
+- [ ] ux: button scroll down on new incom message
+- [ ] ux: scroll down on chatbox focus
+- [ ] ux: add https://ant.design/ library
