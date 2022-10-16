@@ -1,7 +1,8 @@
 # React Chatbox Demo
 
 - goal : create a chatbox who display client/user messages
-- stack : react+typescript+vite
+- stack : react+typescript
+- additionnal stack : vite+react-infinite-scroll-component+uuid
 
 ![Screenshot](./public/screenshot.png)
 
@@ -39,7 +40,21 @@ npm run dev
 - La hauteur du contenu (en vert) peut varier et sera précédée de la date d’insertion (en orange)
 - Optimiser le rendu, pour n’avoir que les messages affichés dans le DOM.
 - L’app doit être en Reactjs
-- Pour simplifier le test, on pourra partir du principe que la pagination se fait sous forme de promise pour simuler un appel api, et peut soit être une donnée en dure, soit via un générateur.
+- partir du principe que la pagination se fait sous forme de promise pour simuler un appel api, et peut soit être une donnée en dure, soit via un générateur.
 - Les messages pourront être stockés dans un store.
-- L’utilisation de libs externes est fortement conseillée.
+- utilisation de libs externes.
 - Il n’y a pas de notions d’utilisateurs / websocket ou autres dépendances.
+
+## Todo
+
+- [x] basic css
+- [x] isolate chatbox by user and client ids
+- [x] faking client incom message with https://jsonplaceholder.typicode.com/
+- [x] faking database api with localStorage
+- [x] lazy load previous messages
+- [x] load range of messages on init
+- [x] load range of messages on scroll to top
+- [ ] button scroll down on new message
+- [ ] scroll down on chatbox focus
+- [ ] redux store for messages notifications
+- [ ] add https://ant.design/ library
