@@ -46,7 +46,7 @@ npm run dev
 - L’app doit être en Reactjs
 - partir du principe que la pagination se fait sous forme de promise pour simuler un appel api, et peut soit être une donnée en dure, soit via un générateur.
 - Les messages pourront être stockés dans un store.
-- utilisation de libs externes.
+- Utilisation de libs externes.
 - Il n’y a pas de notions d’utilisateurs / websocket ou autres dépendances.
 
 ## Todo
@@ -61,7 +61,8 @@ npm run dev
 - [x] test: e2e
 - [x] ux: basic css
 - [x] ux: basic ui
-- [ ] ux: suspense fallbacks
+- [x] ux: basic fallback
+- [ ] ux: chatbox fallbacks/transitions/animations
 - [ ] ux: button scroll down on new incom message
 - [ ] ux: scroll down on chatbox focus
 - [ ] ux: add https://ant.design/ library

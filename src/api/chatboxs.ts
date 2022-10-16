@@ -44,14 +44,3 @@ export const getPreviousItemsFromTo = ({ clientId, userId, from, to }: ItemsRang
   const itemsDB = db.data;
   return itemsDB.slice(from, to);
 };
-
-// export const getPreviousItemsFromItemRange = ({ clientId, userId, prevItem, range }: ItemsRangeDB) => {
-//   // if (!prevItem) return getPreviousItemsFromRange({ clientId, userId, range });
-
-//   const db = getDb({ userId, clientId });
-//   const itemsDB = db.data;
-//   const itemsFilteredByDate = itemsDB.filter((obj: any) => obj?.createdAt < prevItem?.createdAt);
-//   const limit = itemsFilteredByDate.length - 1 - range;
-//   const itemsFilteredByRange = itemsFilteredByDate.filter((obj: any, i: number) => i > range);
-//   return itemsFilteredByRange;
-// };
