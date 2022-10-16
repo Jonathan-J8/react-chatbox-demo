@@ -1,9 +1,9 @@
-# Tchabox demo
+# React Chatbox Demo
 
 - goal : create a chatbox who display client/user messages
 - stack : react+typescript+vite
 
-![Screenshot](screenshot.png)
+![Screenshot](./public/screenshot.png)
 
 ## Folders structure
 
