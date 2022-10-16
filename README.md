@@ -10,7 +10,11 @@
 
 - ref : https://www.robinwieruch.de/react-folder-structure/
 
-## Project Setup
+## Scripts
+
+look at package.json file for all scripts.
+
+### Run Demo
 
 ```sh
 npm install
