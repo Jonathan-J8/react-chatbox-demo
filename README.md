@@ -54,6 +54,7 @@ npm run dev
 - [x] lazy load previous messages
 - [x] load range of messages on init
 - [x] load range of messages on scroll to top
+- [x] e2e tests
 - [ ] button scroll down on new message
 - [ ] scroll down on chatbox focus
 - [ ] redux store for messages notifications
