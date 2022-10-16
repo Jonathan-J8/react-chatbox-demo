@@ -1,16 +1,16 @@
 import { Fragment, lazy, Suspense } from 'react';
 
-import NavBar from '@/ui/Navbar';
-import ContainerMain from '@/ui/ContainerMain';
-
+import SpinnerFullPage from '@/ui/SpinnerFullPage';
 import css from './style.module.css';
-import Button from '@/ui/Button';
 
+const ContainerMain = lazy(() => import('@/ui/ContainerMain'));
+const Button = lazy(() => import('@/ui/Button'));
+const NavBar = lazy(() => import('@/ui/Navbar'));
 const Chatbox = lazy(() => import('@/components/Chatbox'));
 
 const App = () => {
   return (
-    <Suspense>
+    <Suspense fallback={<SpinnerFullPage />}>
       <Fragment>
         <NavBar>
           <Button
