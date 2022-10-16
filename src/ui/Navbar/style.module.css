@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  padding: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+.brand {
+  flex-grow: 1;
+}
+
+.brand > * {
+  text-decoration: none;
+  color: var(--color-background-contrast);
+}

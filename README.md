@@ -5,7 +5,7 @@
 
 ![Screenshot](screenshot.png)
 
-## Project structure
+## Folders structure
 
 - ref : https://www.robinwieruch.de/react-folder-structure/
 
@@ -15,10 +15,8 @@
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
-npm run dev
+npm run preview
 ```
 
 ### Type-Check, Compile and Minify for Production
@@ -27,10 +25,10 @@ npm run dev
 npm run build
 ```
 
-### Run Production Release
+### Compile and Hot-Reload for Development
 
 ```sh
-npm run preview
+npm run dev
 ```
 
 ## Constraints (in french)

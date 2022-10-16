@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.textarea {
+  display: grid;
+  place-items: center;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 1rem;
+  background-color: white;
+  border: none;
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+.textarea:active {
+  border: solid 1px var(--color-border);
+}
+
+/* textarea::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+}
+textarea::-webkit-scrollbar-track {
+  border-radius: 10px;
+  border: solid 1px var(--color-background-contrast);
+}
+textarea::-webkit-scrollbar-thumb {
+  background: var(--color-background);
+  border-radius: 10px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--color-background);
+} */
