@@ -18,6 +18,7 @@
 - [x] ux: basic css
 - [x] ux: basic ui
 - [x] ux: basic fallback
+- [x] ux: basic accessibility (wcag)
 - [x] ux: adapt css for major browser
 - [ ] ux: chatbox fallbacks/transitions/animations
 - [ ] ux: button scroll down on new incom message
