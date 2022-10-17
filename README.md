@@ -13,10 +13,12 @@
 - [x] logic: load range of messages on init
 - [x] logic: load range of messages on scroll to top
 - [ ] logic: redux store for messages notifications
+- [ ] perf: optimize react-infinite-scroll-component (greedy layout shift)
 - [x] test: e2e
 - [x] ux: basic css
 - [x] ux: basic ui
 - [x] ux: basic fallback
+- [x] ux: adapt css for major browser
 - [ ] ux: chatbox fallbacks/transitions/animations
 - [ ] ux: button scroll down on new incom message
 - [ ] ux: scroll down on chatbox focus
