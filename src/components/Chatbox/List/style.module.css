@@ -21,5 +21,6 @@
 }
 
 .loading {
+  padding-top: 1rem;
   color: gray;
 }
