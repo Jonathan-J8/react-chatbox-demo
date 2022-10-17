@@ -6,7 +6,7 @@ const Message = ({ createdAt, text, position }: ChatboxItem) => {
   const date = new Date(createdAt).toLocaleTimeString([], { timeStyle: 'medium' });
 
   return (
-    <div className={`${css.container} ${pos}`}>
+    <div tabIndex={0} className={`${css.container} ${pos}`}>
       <p className={css.date}> {date}</p>
       <p className={css.text}> {text}</p>
     </div>
