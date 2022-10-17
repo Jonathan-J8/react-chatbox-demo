@@ -22,7 +22,7 @@
 - [x] ux: adapt css for major browser
 - [ ] ux: chatbox fallbacks/transitions/animations
 - [ ] ux: button scroll down on new incom message
-- [ ] ux: scroll down on chatbox focus
+- [ ] ux: scroll down on chatbox re-focus
 - [ ] ux: add https://ant.design/ library
 
 ## Folders structure
