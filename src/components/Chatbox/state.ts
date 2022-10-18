@@ -25,6 +25,6 @@ export const reducer = (state: ChatboxState, action: ChatboxAction): ChatboxStat
       return initState();
 
     default:
-      throw new Error(`Chatbox : action.type "${type}" not handle`);
+      throw new Error(`Chatbox : action.type "${type}" not handled`);
   }
 };

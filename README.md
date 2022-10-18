@@ -12,9 +12,9 @@
 - [x] logic: lazy load previous messages
 - [x] logic: load range of messages on init
 - [x] logic: load range of messages on scroll to top
-- [ ] logic: datas consistency (re-ordering by date)
+- [x] logic: datas consistency (re-ordering by date)
 - [ ] logic: redux store for messages notifications
-- [ ] perf: optimize api calls (onbeforeunload listener, on unmout component, throttle/debounce)
+- [ ] perf: optimize api calls (onbeforeunload listener, on component unmout , throttle/debounce)
 - [ ] perf: optimize react-infinite-scroll-component (greedy layout shift)
 - [x] test: e2e
 - [x] ux: basic css

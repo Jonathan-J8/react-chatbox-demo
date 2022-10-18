@@ -36,6 +36,7 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
   };
 
   const loadItems = async () => {
+    await wait(Math.random() * 1000 + 500); // faking fetch delay
     const to = db.getItemsLength({ clientId, userId });
     const from = Math.max(0, to - messageLimit);
     const items = db.getPreviousItemsFromTo({ clientId, userId, from, to });
@@ -56,8 +57,8 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
   // for debugging
   useWindowListener(Action.ERASE_ALL_CHATBOX_STORE, reinitState);
 
-  const itemsReverse = [...state.items].reverse(); // safely reverse
-  const itemsLength = itemsReverse.length;
+  const itemsReversed = [...state.items].sort((a, b) => b.createdAt - a.createdAt); // safely order items by date (last first)
+  const itemsLength = itemsReversed.length;
   const hasMoreItem = state.startAtIndex > 0;
   const scrollableId = `chatbox-${userId}-${clientId}`;
 
@@ -66,7 +67,7 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
       <summary className={css.title}>Message from {clientName}</summary>
 
       <List dataLength={itemsLength} hasMore={hasMoreItem} scrollableId={scrollableId} onScroll={prependItems}>
-        {itemsReverse.map((msg) => (
+        {itemsReversed.map((msg) => (
           <Item key={msg.id} {...msg} />
         ))}
       </List>
