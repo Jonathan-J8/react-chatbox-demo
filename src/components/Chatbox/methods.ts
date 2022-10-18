@@ -2,12 +2,12 @@ import { v4 as uuidv4 } from 'uuid';
 import dispatch from '@/utils/dispatch';
 import { Action, ChatboxItem } from './type';
 
-interface ParseProps {
+interface ParseItemProps {
   text: ChatboxItem['text'];
   position: ChatboxItem['position'];
 }
 
-export const parseItem = ({ text, position }: ParseProps): ChatboxItem => ({
+export const parseItem = ({ text, position }: ParseItemProps): ChatboxItem => ({
   id: `${uuidv4()}`,
   createdAt: Date.now(),
   text,

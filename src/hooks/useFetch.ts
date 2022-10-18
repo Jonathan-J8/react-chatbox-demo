@@ -14,6 +14,8 @@ const useFetch = (url: string, options?: RequestInit | undefined): FetchResult =
 
   useEffect(() => {
     const controller = new AbortController();
+    // its commented to keep re-render to minimum
+    // setResult({ ...defaultResult, state: 'pending' });
 
     (async () => {
       try {

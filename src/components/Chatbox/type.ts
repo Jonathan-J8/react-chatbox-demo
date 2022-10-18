@@ -21,7 +21,7 @@ export type ChatboxComponent = {
 export enum Action {
   PUSH_ITEM = 'a',
   PREPEND_ITEMS = 'b',
-  FLUCH = 'c',
+  INIT_DEFAULT_STATE = 'c',
   ERASE_ALL_CHATBOX_STORE = 'd',
 }
 
@@ -40,5 +40,5 @@ export type ChatboxAction =
       };
     }
   | {
-      type: Action.FLUCH;
+      type: Action.INIT_DEFAULT_STATE;
     };

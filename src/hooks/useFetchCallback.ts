@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import typeOf from '@/utils/typeOf';
 import type { FetchResult } from './useFetch';
 
-const useFetchSimple = (
+const useFetchCallback = (
   url: string,
   onResult?: (res: FetchResult) => void,
   options?: RequestInit | undefined
@@ -22,7 +22,7 @@ const useFetchSimple = (
     })();
 
     return () => controller.abort();
-  }, [url, options]);
+  }, [url]);
 };
 
-export default useFetchSimple;
+export default useFetchCallback;

@@ -2,6 +2,7 @@ import { ChatboxAction, ChatboxState, Action } from './type';
 
 export const initState = (): ChatboxState => ({ items: [], startAtIndex: 0 });
 
+// TODO : order items by date. If not, new item can prepend previous item
 export const reducer = (state: ChatboxState, action: ChatboxAction): ChatboxState => {
   const { type } = action;
   const { items } = state;
@@ -20,7 +21,7 @@ export const reducer = (state: ChatboxState, action: ChatboxAction): ChatboxStat
         startAtIndex: action.payload.startAtIndex,
       };
 
-    case Action.FLUCH:
+    case Action.INIT_DEFAULT_STATE:
       return initState();
 
     default:

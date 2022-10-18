@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react';
 import * as db from '@/api/chatboxs';
 import wait from '@/utils/wait';
-import useIncomingText from '@/hooks/useIncomingText';
+import useIncomingMessageText from '@/hooks/useIncomingMessageText';
 import useWindowListener from '@/hooks/useWindowListener';
 
 import { Action, type ChatboxComponent } from './type';
@@ -28,10 +28,9 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
   };
 
   const prependItems = async () => {
-    await wait(Math.random() * 1000); // fake fetch delay
-    const index = state.startAtIndex;
-    const from = Math.max(0, index - messageLimit);
-    const to = Math.max(0, index);
+    await wait(Math.random() * 1000 + 500); // faking fetch delay
+    const from = Math.max(0, state.startAtIndex - messageLimit);
+    const to = Math.max(0, state.startAtIndex);
     const items = db.getPreviousItemsFromTo({ clientId, userId, from, to });
     dispatch({ type: Action.PREPEND_ITEMS, payload: { items, startAtIndex: from } });
   };
@@ -43,19 +42,19 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
     dispatch({ type: Action.PREPEND_ITEMS, payload: { items, startAtIndex: from } });
   };
 
-  const removeAllItems = () => {
+  const reinitState = () => {
     db.flush({ clientId, userId });
-    dispatch({ type: Action.FLUCH });
+    dispatch({ type: Action.INIT_DEFAULT_STATE });
   };
 
   useEffect(() => {
     loadItems();
   }, []);
 
-  useIncomingText(pushIncomItem);
+  useIncomingMessageText(pushIncomItem);
 
-  // debug
-  useWindowListener(Action.ERASE_ALL_CHATBOX_STORE, removeAllItems);
+  // for debugging
+  useWindowListener(Action.ERASE_ALL_CHATBOX_STORE, reinitState);
 
   const itemsReverse = [...state.items].reverse(); // safely reverse
   const itemsLength = itemsReverse.length;
