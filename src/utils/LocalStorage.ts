@@ -1,5 +1,3 @@
-// TODO : use localstorage to handle form's inputs
-
 import typeOf from './typeOf';
 
 type Option = {
@@ -12,7 +10,8 @@ type Option = {
  * @constructor
  * @param {string} key - unique key to store your datas.
  * @param {Object} Option -
- * @param {string} option.immutable - helper for migration and if you want your key to change over app's version. Default false, your key will be prefixed with __STORAGE_VERSION__ from ./vite.config.ts file.
+ * @param {string} option.immutable - helper for migration and if you want your key to change over app's version. Default true, your key will not be be prefixed with __STORAGE_VERSION__ from ./vite.config.ts file.
+ * @param {string} option.type - specify the contructor of your data type.
  */
 class LocalStorage {
   private _key: string;
