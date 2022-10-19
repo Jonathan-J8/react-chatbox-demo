@@ -66,7 +66,7 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
     <details className={css.container} open>
       <summary className={css.title}>Message from {clientName}</summary>
 
-      <List dataLength={itemsLength} hasMore={hasMoreItem} scrollableId={scrollableId} onScroll={prependItems}>
+      <List dataLength={itemsLength} hasMore={hasMoreItem} onScroll={prependItems}>
         {itemsReversed.map((msg) => (
           <Item key={msg.id} {...msg} />
         ))}

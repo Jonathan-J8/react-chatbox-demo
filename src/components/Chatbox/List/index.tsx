@@ -1,19 +1,19 @@
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, useId } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import css from './style.module.css';
 
 interface ListProps extends PropsWithChildren {
   dataLength: number;
   hasMore: boolean;
-  scrollableId: string;
   onScroll: () => void;
 }
 
-const List = ({ dataLength, hasMore, scrollableId, onScroll, children }: ListProps) => {
+const List = ({ dataLength, hasMore, onScroll, children }: ListProps) => {
+  const id = useId();
   return (
-    <div className={css.container} id={scrollableId}>
+    <div className={css.container} id={id}>
       <InfiniteScroll
-        scrollableTarget={scrollableId}
+        scrollableTarget={id}
         dataLength={dataLength}
         next={onScroll}
         hasMore={hasMore}
