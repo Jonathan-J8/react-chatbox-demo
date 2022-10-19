@@ -5,11 +5,11 @@ import Fab from '@/ui/Fab';
 
 import css from './style.module.css';
 
-type IInputText = {
+type InputText = {
   onClick: (str: string) => void;
 };
 
-const InputText = ({ onClick }: IInputText) => {
+const InputText = ({ onClick }: InputText) => {
   const id = useId();
   const inputRef = useRef<HTMLTextAreaElement>(null);
 

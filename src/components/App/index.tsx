@@ -3,9 +3,10 @@ import { Fragment, lazy, Suspense } from 'react';
 import SpinnerFullPage from '@/ui/SpinnerFullPage';
 import css from './style.module.css';
 
-const ContainerMain = lazy(() => import('@/ui/ContainerMain'));
-const Button = lazy(() => import('@/ui/Button'));
-const NavBar = lazy(() => import('@/ui/Navbar'));
+import ContainerMain from '@/ui/ContainerMain';
+import Button from '@/ui/Button';
+import NavBar from '@/ui/Navbar';
+
 const Chatbox = lazy(() => import('@/components/Chatbox'));
 
 const App = () => {

@@ -60,7 +60,6 @@ const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponen
   const itemsReversed = [...state.items].sort((a, b) => b.createdAt - a.createdAt); // safely order items by date (last first)
   const itemsLength = itemsReversed.length;
   const hasMoreItem = state.startAtIndex > 0;
-  const scrollableId = `chatbox-${userId}-${clientId}`;
 
   return (
     <details className={css.container} open>
