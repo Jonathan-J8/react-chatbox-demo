@@ -1,6 +1,6 @@
 import { ChatboxAction, ChatboxState, Action } from './type';
 
-export const initState = (): ChatboxState => ({ items: [], startAtIndex: 0 });
+export const initState = (e: ChatboxState): ChatboxState => ({ ...e });
 
 // TODO : order items by date. If not, new item can prepend previous item
 export const reducer = (state: ChatboxState, action: ChatboxAction): ChatboxState => {
@@ -22,7 +22,7 @@ export const reducer = (state: ChatboxState, action: ChatboxAction): ChatboxStat
       };
 
     case Action.INIT_DEFAULT_STATE:
-      return initState();
+      return initState({ items: [], startAtIndex: 0 });
 
     default:
       throw new Error(`Chatbox : action.type "${type}" not handled`);

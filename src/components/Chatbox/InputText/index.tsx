@@ -1,4 +1,4 @@
-import { useId, useRef } from 'react';
+import { KeyboardEvent, useId, useRef } from 'react';
 
 import svg from '@/assets/icon_send.svg';
 import Fab from '@/ui/Fab';
@@ -13,11 +13,15 @@ const InputText = ({ onClick }: InputText) => {
   const id = useId();
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const _onClick = () => {
+  const handleText = () => {
     if (!inputRef.current) return;
     const text = inputRef.current.value;
     if (!text) return;
     onClick(text);
+    inputRef.current.value = '';
+  };
+  const handlePressEnter = (e: KeyboardEvent) => {
+    if (e.code === 'Enter') handleText();
   };
 
   return (
@@ -25,8 +29,15 @@ const InputText = ({ onClick }: InputText) => {
       <label htmlFor={id} className="sr-only">
         Wright your message
       </label>
-      <textarea rows={2} name={id} ref={inputRef} className={css.textarea} placeholder="Your message..."></textarea>
-      <Fab title="send message" onClick={_onClick}>
+      <textarea
+        onKeyUp={handlePressEnter}
+        rows={2}
+        name={id}
+        ref={inputRef}
+        className={css.textarea}
+        placeholder="Your message..."
+      ></textarea>
+      <Fab title="send message" onClick={handleText}>
         <img src={svg} alt="send message" width="24" height="24" />
       </Fab>
     </div>
