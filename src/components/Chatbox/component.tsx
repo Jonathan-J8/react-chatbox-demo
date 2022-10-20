@@ -13,7 +13,7 @@ import Item from './Item';
 import InputText from './InputText';
 
 const Chatbox = ({ messageLimit, userId, clientId, clientName }: ChatboxComponent) => {
-  const [state, dispatch] = useReducer(reducer, initState());
+  const [state, dispatch] = useReducer(reducer, { items: [], startAtIndex: 0 }, initState);
 
   const pushUserItem = (text: string) => {
     const item = parseItem({ text, position: 'end' });
