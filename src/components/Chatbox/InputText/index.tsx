@@ -21,7 +21,11 @@ const InputText = ({ onClick }: InputText) => {
     inputRef.current.value = '';
   };
   const handlePressEnter = (e: KeyboardEvent) => {
-    if (e.code === 'Enter') handleText();
+    if (e.code === 'Enter') {
+      e.preventDefault();
+      handleText();
+      return;
+    }
   };
 
   return (
@@ -30,7 +34,7 @@ const InputText = ({ onClick }: InputText) => {
         Wright your message
       </label>
       <textarea
-        onKeyUp={handlePressEnter}
+        onKeyDown={handlePressEnter}
         rows={2}
         name={id}
         ref={inputRef}
