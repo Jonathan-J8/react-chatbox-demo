@@ -14,7 +14,9 @@ const useIncomingMessageText = (cb: (res: string) => void) => {
     if (text) cb(text);
 
     // re-call useFetchCallback each 5000ms to 10000ms
-    await wait(Math.random() * 5000 + 5000);
+    const timeout = Math.random() * 5000 + 5000;
+    await wait(timeout);
+
     setUrl(generateUrl());
   });
 };

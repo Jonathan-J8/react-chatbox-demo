@@ -8,7 +8,10 @@ const useTimeout = (delay: number, callback: () => void) => {
   }, [callback]);
 
   useEffect(() => {
-    const timer = setTimeout(savedCallback.current, delay);
+    const tick = () => {
+      savedCallback.current();
+    };
+    const timer = setTimeout(tick, delay);
     return () => clearTimeout(timer);
   }, [delay]);
 };
